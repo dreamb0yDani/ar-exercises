@@ -1,7 +1,7 @@
 class Store < ActiveRecord::Base
   has_many :employees
   validates :name, length: {minimum: 3}
-  validates :annual_revenue, numericality: { only_integer: true}, exclusion: {in: [0], message: "%{value} is not a valid value. Should be greater than 0."}
+  validates :annual_revenue, numericality: { only_integer: true}
   validate :must_carry_apparels
 
   def must_carry_apparels
